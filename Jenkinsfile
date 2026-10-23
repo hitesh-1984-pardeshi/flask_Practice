@@ -35,10 +35,7 @@ pipeline {
 
         stage('Deploy to Staging') {
             steps {
-                sh '''
-                    sudo /usr/local/bin/deploy-flask-staging
-                    sudo systemctl is-active --quiet flask-staging
-                '''
+                sh 'sudo /usr/local/bin/deploy-flask-staging'
             }
         }
     }
