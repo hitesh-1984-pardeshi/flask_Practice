@@ -1,6 +1,14 @@
+import os
 import pytest
 import mongomock
 from bson.objectid import ObjectId
+
+os.environ.setdefault(
+    "MONGO_URI",
+    "mongodb://127.0.0.1:27017/student_db"
+)
+os.environ.setdefault("SECRET_KEY", "test-secret-key")
+
 from app import app, mongo
 
 
